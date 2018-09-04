@@ -1,6 +1,6 @@
 
 public class CaesarCypher {
-	private int key;
+	public int key;
 	
 	private final static String alphabet = "ABCDEFGHIJKLMNOPQRTUVXYZ";
 	
@@ -11,6 +11,13 @@ public class CaesarCypher {
 		String leftSubstring = alphabet.substring(0, key);
 		String rightSubstring = alphabet.substring(key);
 		shiftedAlphabet = rightSubstring + leftSubstring;
+	}
+	public String encode (String clearText) {
+		String cypherText = "";
+		for (int i= 0; i<clearText.length(); i++) {
+			cypherText += shiftedAlphabet.charAt(alphabet.indexOf(clearText.charAt(i)));
+		}
+		return cypherText;
 	}
 	
 }
